@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Về tôi",
+    "works": "Dự án",
+    "contact": "Liên hệ"
+  },
+  "profile": {
+    "fullName": "Nguyễn Quý Đức",
+    "education": "ĐH Bách Khoa Hà Nội - Công nghệ thông tin",
+    "location": "Hà Nội, Việt Nam",
+    "languages": "EN / VI / JP"
+  },
+  "hero": {
+    "hiIm": "Xin chào, tôi là",
+    "and": "VÀ",
+    "role1": "KỸ SƯ PHẦN MỀM",
+    "role2": "FULLSTACK & VR/XR",
+    "description": "Kỹ sư phần mềm đa năng, đam mê phát triển sản phẩm. Fullstack và nghiên cứu VR/XR.",
+    "descriptionHighlight": "Kỹ sư phần mềm",
+    "scroll": "CUỘN",
+    "hireNow": "THUÊ TÔI",
+    "expand": "+ MỞ RỘNG",
+    "minimize": "- THU GỌN"
+  },
+  "about": {
+    "aboutMe": "VỀ TÔI",
+    "information": "Thông tin",
+    "name": "Tên",
+    "edu": "Học vấn",
+    "loc": "Nơi ở",
+    "lang": "Ngôn ngữ",
+    "whatIDo": "Tôi làm gì?",
+    "whatIDoText": "Kỹ sư phần mềm đa năng, đam mê phát triển sản phẩm. Fullstack và nghiên cứu VR/XR. Xây sản phẩm \"Make in Vietnam\" chất lượng cao, mang lại giá trị thực cho người dùng.",
+    "whatIDoHighlight1": "Kỹ sư phần mềm",
+    "whatIDoHighlight2": "Make in Vietnam",
+    "skills": "Kỹ năng",
+    "interactiveEngine": "(Thử kéo thả xem sao)",
+    "aestheticMode": "PHONG CÁCH",
+    "aesthetic": "Tối giản",
+    "darkMode": "Dark Mode",
+    "status": "Trạng thái",
+    "statusText": "Đang tìm việc..."
+  },
+  "works": {
+    "showcaseBg": "DỰ ÁN",
+    "showcase": "Showcase",
+    "viewProject": "XEM DỰ ÁN"
+  },
+  "contact": {
+    "title": "LIÊN HỆ",
+    "openToWork": "SẴN SÀNG LÀM VIỆC",
+    "getInTouch": "KẾT NỐI",
+    "sendMessage": "Gửi tin nhắn",
+    "back": "← QUAY LẠI",
+    "sendMessageTitle": "GỬI TIN NHẮN",
+    "send": "Gửi",
+    "sending": "ĐANG GỬI...",
+    "sent": "ĐÃ GỬI!",
+    "formName": "Tên",
+    "formEmail": "Email",
+    "formMessage": "Nội dung"
+  },
+  "footer": {
+    "copyright": "© NQD 2026"
+  },
+  "modal": {
+    "swipeToView": "TRƯỢT / CUỘN ĐỂ XEM"
+  },
+  "toast": {
+    "missingInfo": "THIẾU THÔNG TIN",
+    "missingInfoMessage": "Vui lòng điền đầy đủ các trường.",
+    "success": "THÀNH CÔNG",
+    "successMessage": "Tin nhắn của bạn đã được gửi!"
+  }
+}

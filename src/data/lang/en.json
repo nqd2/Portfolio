@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Me",
+    "works": "Works",
+    "contact": "Contact"
+  },
+  "profile": {
+    "fullName": "Nguyen Quy Duc",
+    "education": "HUST - Software Engineering",
+    "location": "Hanoi, Vietnam",
+    "languages": "EN / VI / JP"
+  },
+  "hero": {
+    "hiIm": "Hi, I'm",
+    "and": "specialized in",
+    "role1": "SOFTWARE ENGINEER",
+    "role2": "FULLSTACK & VR/XR",
+    "description": "Versatile Software Engineer passionate about product development. Fullstack & VR/XR research.",
+    "descriptionHighlight": "Software Engineer",
+    "scroll": "SCROLL",
+    "hireNow": "HIRE NOW",
+    "expand": "+ EXPAND",
+    "minimize": "- MINIMIZE"
+  },
+  "about": {
+    "aboutMe": "ABOUT ME",
+    "information": "Information",
+    "name": "Full Name",
+    "edu": "Education",
+    "loc": "Location",
+    "lang": "Languages",
+    "whatIDo": "What I do?",
+    "whatIDoText": "Versatile Software Engineer with a strong passion for Software Product Development. Fullstack and VR/XR research. Building high-quality \"Make in Vietnam\" products that deliver real value to users.",
+    "whatIDoHighlight1": "Software Engineer",
+    "whatIDoHighlight2": "Make in Vietnam",
+    "skills": "Skills",
+    "interactiveEngine": "(Try dragging them around)",
+    "aestheticMode": "AESTHETIC_MODE",
+    "aesthetic": "Minimalist",
+    "darkMode": "Dark Mode",
+    "status": "Status",
+    "statusText": "Looking for a job..."
+  },
+  "works": {
+    "showcaseBg": "SHOWCASE",
+    "showcase": "Showcase",
+    "viewProject": "VIEW PROJECT"
+  },
+  "contact": {
+    "title": "CONTACT",
+    "openToWork": "OPEN TO WORK",
+    "getInTouch": "GET IN TOUCH",
+    "sendMessage": "Send a Message",
+    "back": "← BACK",
+    "sendMessageTitle": "SEND MESSAGE",
+    "send": "Send",
+    "sending": "SENDING...",
+    "sent": "SENT!",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formMessage": "Message"
+  },
+  "footer": {
+    "copyright": "© NQD 2026"
+  },
+  "modal": {
+    "swipeToView": "SWIPE / SCROLL TO VIEW"
+  },
+  "toast": {
+    "missingInfo": "MISSING INFO",
+    "missingInfoMessage": "Please fill in all fields correctly.",
+    "success": "SUCCESS",
+    "successMessage": "Your message has been sent!"
+  }
+}

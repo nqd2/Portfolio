@@ -1,0 +1,9 @@
+<svg width="64" height="64" viewBox="0 0 64 64"
+    xmlns="http://www.w3.org/2000/svg">
+    <rect width="64" height="64" fill="black" />
+    <g transform="translate(32, 32) rotate(-2) translate(-32, -32)">
+        <text x="50%" y="54%" font-family="monospace" font-weight="900" font-size="28" text-anchor="middle" dominant-baseline="middle" fill="#00ffff" transform="translate(-2, 0)">NQD</text>
+        <text x="50%" y="54%" font-family="monospace" font-weight="900" font-size="28" text-anchor="middle" dominant-baseline="middle" fill="#ff4500" transform="translate(2, 0)">NQD</text>
+        <text x="50%" y="54%" font-family="monospace" font-weight="900" font-size="28" text-anchor="middle" dominant-baseline="middle" fill="white">NQD</text>
+    </g>
+</svg>

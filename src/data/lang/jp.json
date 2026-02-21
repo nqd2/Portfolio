@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "about": "自己紹介",
+    "works": "作品",
+    "contact": "お問い合わせ"
+  },
+  "profile": {
+    "fullName": "グエン・クイ・ドゥック",
+    "education": "ハノイ工科大学 - ソフトウェア工学",
+    "location": "ハノイ、ベトナム",
+    "languages": "EN / VI / JP"
+  },
+  "hero": {
+    "hiIm": "こんにちは、名前は",
+    "and": "に特化",
+    "role1": "ソフトウェアエンジニア",
+    "role2": "FULLSTACK & VR/XR",
+    "description": "ソフトウェア製品開発に情熱を持つソフトウェアエンジニア。FullstackとVR/XR研究。",
+    "descriptionHighlight": "ソフトウェアエンジニア",
+    "scroll": "スクロール",
+    "hireNow": "採用する",
+    "expand": "+ 展開",
+    "minimize": "- 閉じる"
+  },
+  "about": {
+    "aboutMe": "自己紹介",
+    "information": "情報",
+    "name": "名前",
+    "edu": "学歴",
+    "loc": "所在地",
+    "lang": "言語",
+    "whatIDo": "できること",
+    "whatIDoText": "ソフトウェア製品開発に情熱を持つソフトウェアエンジニア。Fullstack（Next.js、MongoDB）とVR/XR研究。「Make in Vietnam」の高品質製品でユーザーに価値を届けます。",
+    "whatIDoHighlight1": "ソフトウェアエンジニア",
+    "whatIDoHighlight2": "Make in Vietnam",
+    "skills": "スキル",
+    "interactiveEngine": "(ドラッグしてみてください)",
+    "aestheticMode": "スタイル",
+    "aesthetic": "ミニマリスト",
+    "darkMode": "ダークモード",
+    "status": "ステータス",
+    "statusText": "求職中..."
+  },
+  "works": {
+    "showcaseBg": "作品",
+    "showcase": "Showcase",
+    "viewProject": "プロジェクトを見る"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "openToWork": "求職中",
+    "getInTouch": "連絡する",
+    "sendMessage": "メッセージを送る",
+    "back": "← 戻る",
+    "sendMessageTitle": "メッセージを送信",
+    "send": "送信",
+    "sending": "送信中...",
+    "sent": "送信済み!",
+    "formName": "名前",
+    "formEmail": "メール",
+    "formMessage": "メッセージ"
+  },
+  "footer": {
+    "copyright": "© NQD 2026"
+  },
+  "modal": {
+    "swipeToView": "スワイプ / スクロールで閲覧"
+  },
+  "toast": {
+    "missingInfo": "入力漏れ",
+    "missingInfoMessage": "すべての項目を正しく入力してください。",
+    "success": "送信完了",
+    "successMessage": "メッセージを送信しました!"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "profile": {
+    "name": "Đức",
+    "fullName": "Nguyen Quy Duc",
+    "education": "HUST - Software Engineering",
+    "location": "Hanoi, Vietnam",
+    "languages": "EN / VI / JP",
+    "profileImage": "/assets/profile-pic.png",
+    "profileImageLabel": "IMG_PROFILE_01"
+  },
+  "whatIDo": {
+    "text": "Versatile Software Engineer with a strong passion for Software Product Development. Fullstack and VR/XR research. Building high-quality \"Make in Vietnam\" products that deliver real value to users.",
+    "highlights": ["Software Engineer", "Make in Vietnam"]
+  },
+  "skills": [
+    { "name": "Python" },
+    { "name": "Java" },
+    { "name": "C++" },
+    { "name": "JavaScript" },
+    { "name": "TypeScript" },
+    { "name": "Go" },
+    { "name": "Rust" },
+    { "name": "C#" },
+    { "name": "Next.js" },
+    { "name": "React" },
+    { "name": "TailwindCSS" },
+    { "name": "Express.js" },
+    { "name": "FastAPI" },
+    { "name": "Google Cloud" },
+    { "name": "AWS" },
+    { "name": "Docker" },
+    { "name": "CI/CD/GitHub Actions" },
+    { "name": "MongoDB" },
+    { "name": "PostgreSQL" },
+    { "name": "Redis" }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Chung Nhan So",
+      "category": "FULLSTACK",
+      "year": "2025",
+      "images": [
+        "/assets/cns-lookup.png",
+        "/assets/cns-register.png"
+      ],
+      "url": "https://chungnhanso.vn/"
+    },
+    {
+      "id": 2,
+      "title": "SoICT 30th Anniversary Exhibition",
+      "category": "TECH LEAD",
+      "year": "2025",
+      "images": [
+        "/assets/soict-landing.png",
+        "/assets/soict-awards.png",
+        "/assets/soict-360.png"
+      ],
+      "url": "https://360-soict.sinno.io.vn/"
+    }
+  ],
+  "contact": [
+    {
+      "type": "#phone",
+      "label": "(+84) 902 172 005",
+      "url": "tel:+84902172005"
+    },
+    {
+      "type": "email",
+      "label": "quyduc1404@gmail.com",
+      "url": "mailto:quyduc1404@gmail.com"
+    },
+    {
+      "type": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/nguyễn-quý-đức"
+    },
+    {
+      "type": "github",
+      "label": "GitHub",
+      "url": "https://github.com/nqd2"
+    }
+  ]
+}
