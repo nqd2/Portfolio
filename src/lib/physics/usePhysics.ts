@@ -36,8 +36,17 @@ export function usePhysics(skills: { name: string }[]) {
     engine.gravity.y = 1;
     engine.gravity.scale = 0.001;
 
-    const width = containerRef.current.clientWidth;
-    const height = 300;
+    const updateDimensions = () => {
+      if (!containerRef.current) return { width: 300, height: 300 };
+      return {
+        width: containerRef.current.clientWidth,
+        height: containerRef.current.clientHeight || 300
+      };
+    };
+
+    const initialDims = updateDimensions();
+    const width = initialDims.width;
+    const height = initialDims.height;
     const thickness = 60;
     
     const floor = Bodies.rectangle(width / 2, height + thickness / 2, width + 200, thickness, { isStatic: true });
@@ -47,38 +56,55 @@ export function usePhysics(skills: { name: string }[]) {
 
     World.add(engine.world, [floor, leftWall, rightWall, ceiling]);
 
-    const rowX = [20, 20, 20, 20];
-    const initialPositions: { x: number; y: number }[] = [];
+    const calculateInitialPositions = (containerWidth: number, containerHeight: number) => {
+      const positions: { x: number; y: number }[] = [];
+      let cx = 20;
+      let cy = 30;
 
-    const canvas = document.createElement("canvas");
-    const context = canvas.getContext("2d");
-    if (context) {
-      context.font = "bold 14px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace";
-    }
+      skills.forEach((skill, index) => {
+        const el = elementsRef.current[index];
+        let bodyWidth = 100;
+        if (el && el.offsetWidth > 0) {
+          bodyWidth = el.offsetWidth;
+        } else {
+          bodyWidth = skill.name.length * 10 + 60;
+        }
+        
+        const bodyHeight = 44;
+
+        if (cx + bodyWidth > containerWidth - 20) {
+          cx = 20;
+          cy += bodyHeight + 8;
+        }
+
+        let bodyY = cy;
+        if (bodyY > containerHeight - bodyHeight) {
+          bodyY = containerHeight - bodyHeight - Math.random() * 10;
+        }
+
+        positions.push({ x: cx + bodyWidth / 2, y: bodyY });
+        cx += bodyWidth + 8;
+      });
+      return positions;
+    };
+
+    const initialPos = calculateInitialPositions(width, height);
+    initialPositionsRef.current = initialPos;
 
     const newSkillBodies: Matter.Body[] = [];
     skills.forEach((skill, index) => {
-      let row = 0;
-      if (index >= 8 && index <= 12) row = 1;
-      else if (index >= 13 && index <= 16) row = 2;
-      else if (index >= 17) row = 3;
-
-      let textWidth = skill.name.length * 10; 
-      if (context) {
-        textWidth = context.measureText(skill.name.toUpperCase()).width;
+      const el = elementsRef.current[index];
+      let bodyWidth = 100;
+      if (el && el.offsetWidth > 0) {
+        bodyWidth = el.offsetWidth;
+      } else {
+        bodyWidth = skill.name.length * 10 + 60;
       }
-      const bodyWidth = Math.ceil(textWidth + 60); 
-      const bodyHeight = 44;
-
-      const currentX = rowX[row] + bodyWidth / 2;
-      const currentY = 30 + row * 48; 
       
-      initialPositions.push({ x: currentX, y: currentY });
-      rowX[row] += bodyWidth + 8; 
+      const pos = initialPos[index];
+      const categoryDensity = 0.003;
 
-      const categoryDensity = row === 0 ? 0.003 : row === 1 ? 0.002 : row === 2 ? 0.004 : 0.003;
-
-      const body = Bodies.rectangle(currentX, currentY, bodyWidth, bodyHeight, {
+      const body = Bodies.rectangle(pos.x, pos.y, bodyWidth, 44, {
         restitution: 0.15, 
         friction: 0.1,
         frictionAir: 0.015, 
@@ -89,13 +115,12 @@ export function usePhysics(skills: { name: string }[]) {
       World.add(engine.world, body);
     });
     
-    initialPositionsRef.current = initialPositions;
     skillBodiesRef.current = newSkillBodies;
 
     const mouse = Matter.Mouse.create(containerRef.current);
-    const mEngine = engine as any;
+    const mEngine = engine as Matter.Engine & { mouse: Matter.Mouse };
     mEngine.mouse = mouse;
-    const mMouse = mouse as any;
+    const mMouse = mouse as unknown as Record<string, EventListener>;
     mouse.element.removeEventListener("mousewheel", mMouse.mousewheel);
     mouse.element.removeEventListener("DOMMouseScroll", mMouse.mousewheel);
     
@@ -161,6 +186,10 @@ export function usePhysics(skills: { name: string }[]) {
     element.addEventListener("mousedown", handleMouseDown);
     element.addEventListener("mouseup", handleMouseUp);
     element.addEventListener("mouseleave", handleMouseUp);
+    
+    element.addEventListener("touchstart", handleMouseDown, { passive: false });
+    element.addEventListener("touchend", handleMouseUp);
+    element.addEventListener("touchcancel", handleMouseUp);
 
     const runner = Runner.create();
     runnerRef.current = runner;
@@ -183,12 +212,15 @@ export function usePhysics(skills: { name: string }[]) {
     const handleResize = () => {
       if (!containerRef.current) return;
       const newWidth = containerRef.current.clientWidth;
-      Body.setPosition(rightWall, { x: newWidth + thickness / 2, y: height / 2 });
-      Body.setPosition(floor, { x: newWidth / 2, y: height + thickness / 2 });
+      const newHeight = containerRef.current.clientHeight;
+      Body.setPosition(rightWall, { x: newWidth + thickness / 2, y: newHeight / 2 });
+      Body.setPosition(floor, { x: newWidth / 2, y: newHeight + thickness / 2 });
       Body.setPosition(ceiling, { x: newWidth / 2, y: -100 });
       
-      Matter.Body.setVertices(floor, Matter.Bodies.rectangle(newWidth / 2, height + thickness / 2, newWidth + 200, thickness).vertices);
+      Matter.Body.setVertices(floor, Matter.Bodies.rectangle(newWidth / 2, newHeight + thickness / 2, newWidth + 200, thickness).vertices);
       Matter.Body.setVertices(ceiling, Matter.Bodies.rectangle(newWidth / 2, -100, newWidth + 200, thickness).vertices);
+
+      initialPositionsRef.current = calculateInitialPositions(newWidth, newHeight);
     };
     
     window.addEventListener("resize", handleResize);
@@ -203,6 +235,9 @@ export function usePhysics(skills: { name: string }[]) {
       element.removeEventListener("mousedown", handleMouseDown);
       element.removeEventListener("mouseup", handleMouseUp);
       element.removeEventListener("mouseleave", handleMouseUp);
+      element.removeEventListener("touchstart", handleMouseDown);
+      element.removeEventListener("touchend", handleMouseUp);
+      element.removeEventListener("touchcancel", handleMouseUp);
       Matter.Events.off(engine, 'beforeUpdate');
 
       World.clear(engine.world, false);
@@ -287,7 +322,7 @@ export function usePhysics(skills: { name: string }[]) {
           Matter.Sleeping.set(body, true);
         } else {
           Matter.Sleeping.set(body, false);
-          (body as any).sleepCounter = 0; 
+          (body as Matter.Body & { sleepCounter: number }).sleepCounter = 0; 
           Matter.Body.applyForce(body, body.position, { x: 0, y: 0.000001 });
         }
       });

@@ -152,7 +152,7 @@ export default function BackgroundGrid() {
     <canvas
       ref={canvasRef}
       id="neo-grid"
-      className="fixed inset-0 w-full h-full pointer-events-none z-[1] opacity-10 mix-blend-difference"
+      className="fixed inset-0 w-full h-full pointer-events-none -z-10 opacity-10 mix-blend-difference"
       style={{ left: 0, top: 0 }}
     />
   );

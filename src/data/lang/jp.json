@@ -36,9 +36,9 @@
     "whatIDoHighlight2": "Make in Vietnam",
     "skills": "スキル",
     "interactiveEngine": "(ドラッグしてみてください)",
-    "aestheticMode": "スタイル",
-    "aesthetic": "ミニマリスト",
-    "darkMode": "ダークモード",
+    "operatingSystem": "オペレーティングシステム",
+    "osName": "Windows",
+    "osVer": "Win10 LTSC",
     "status": "ステータス",
     "statusText": "求職中..."
   },

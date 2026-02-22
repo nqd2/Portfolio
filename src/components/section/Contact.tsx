@@ -105,39 +105,39 @@ export default function Contact() {
     <section
       id="contact"
       data-theme="light"
-      className={`relative w-full min-h-[80vh] bg-white text-black flex flex-col py-20 border-t-4 border-black z-0 transition-all ${
+      className={`relative w-screen max-w-full overflow-x-hidden min-h-[80vh] bg-white text-black flex flex-col py-20 border-t-4 border-black z-0 transition-all ${
         contactFormVisible ? "justify-center" : "justify-center items-center"
       }`}
     >
       <div className="text-center mb-12 relative w-full z-10 gsap-fade-up">
         <h2
           ref={titleRef}
-          className="text-[5rem] md:text-[8rem] font-black text-black mb-8 uppercase tracking-tighter mix-blend-multiply scroll-float-text"
+          className="text-[clamp(3rem,12vw,6rem)] md:text-[8rem] font-black text-black mb-8 uppercase tracking-tighter mix-blend-multiply scroll-float-text break-all sm:break-normal px-4"
         >
           {t("contact.title")}
         </h2>
       </div>
 
       {!contactFormVisible ? (
-        <div className="scroll-float bg-black text-white border-4 border-black p-12 shadow-[12px_12px_0px_0px_#000] rotate-1 hover:rotate-0 transition-transform duration-300 max-w-2xl w-full mx-4 relative gsap-fade-up">
-          <div className="absolute -top-6 -right-6 bg-white text-black border-[3px] border-black p-2 font-black rotate-12 shadow-neo">
+        <div className="scroll-float bg-black text-white border-4 border-black p-6 sm:p-12 shadow-[8px_8px_0px_0px_#000] sm:shadow-[12px_12px_0px_0px_#000] rotate-1 hover:rotate-0 transition-transform duration-300 max-w-[calc(100vw-2rem)] sm:max-w-2xl w-full mx-4 relative gsap-fade-up">
+          <div className="absolute -top-4 -right-2 sm:-top-6 sm:-right-6 bg-white text-black border-[3px] border-black p-1.5 sm:p-2 text-xs sm:text-base font-black rotate-12 shadow-neo z-20">
             {t("contact.openToWork")}
           </div>
 
-          <h3 className="text-4xl font-black mb-8 border-b-4 border-white pb-4">
+          <h3 className="text-3xl sm:text-4xl font-black mb-8 border-b-4 border-white pb-4">
             {t("contact.getInTouch")}
           </h3>
 
-          <div id="contact-options" className="flex flex-col gap-6">
+          <div id="contact-options" className="flex flex-col gap-4 sm:gap-6">
             {portfolio.contact.map((item) => (
               <a
                 key={item.type}
                 href={item.url}
                 target={item.url.startsWith("http") ? "_blank" : undefined}
                 rel={item.url.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="text-2xl font-bold flex items-center gap-4 hover:bg-white hover:text-black hover:px-2 transition-all group relative z-10"
+                className="text-lg sm:text-2xl font-bold flex items-center gap-3 sm:gap-4 hover:bg-white hover:text-black hover:p-1 sm:hover:px-2 transition-all group relative z-10 break-all sm:break-normal"
               >
-                <span className="w-8 h-8 rounded-none border-2 border-white flex items-center justify-center text-[16px] group-hover:border-black group-hover:bg-black group-hover:text-white">
+                <span className="w-8 h-8 rounded-none border-2 border-white flex items-center justify-center text-[16px] group-hover:border-black group-hover:bg-black group-hover:text-white shrink-0">
                   {item.type === "email" ? <FaEnvelope /> : item.type === "github" ? <FaGithub /> : item.type === "linkedin" ? <FaLinkedin /> : item.type === "facebook" ? <FaFacebook /> : item.type === "phone" ? <FaPhone /> : <FaLink />}
                 </span>
                 {item.label}
@@ -156,7 +156,7 @@ export default function Contact() {
           </div>
         </div>
       ) : (
-        <div className="scroll-float bg-black text-white border-4 border-black p-12 shadow-[12px_12px_0px_0px_#000] max-w-2xl w-full mx-4 relative gsap-fade-up">
+        <div className="scroll-float bg-black text-white border-4 border-black p-6 sm:p-12 shadow-[8px_8px_0px_0px_#000] sm:shadow-[12px_12px_0px_0px_#000] max-w-[calc(100vw-2rem)] sm:max-w-2xl w-full mx-4 relative gsap-fade-up">
           <button
             type="button"
             onClick={() => handleToggleForm(false)}
@@ -165,7 +165,7 @@ export default function Contact() {
             {t("contact.back")}
           </button>
 
-          <h3 className="text-4xl font-black mb-8 border-b-4 border-white pb-4">
+          <h3 className="text-3xl sm:text-4xl font-black mb-8 border-b-4 border-white pb-4">
             {t("contact.sendMessageTitle")}
           </h3>
 

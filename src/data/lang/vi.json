@@ -36,9 +36,9 @@
     "whatIDoHighlight2": "Make in Vietnam",
     "skills": "Kỹ năng",
     "interactiveEngine": "(Thử kéo thả xem sao)",
-    "aestheticMode": "PHONG CÁCH",
-    "aesthetic": "Tối giản",
-    "darkMode": "Dark Mode",
+    "operatingSystem": "HỆ ĐIỀU HÀNH",
+    "osName": "Windows",
+    "osVer": "Win10 LTSC",
     "status": "Trạng thái",
     "statusText": "Đang tìm việc..."
   },

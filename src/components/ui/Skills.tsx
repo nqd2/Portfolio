@@ -56,7 +56,7 @@ export default function Skills() {
         <div className="flex gap-2">
           <button
             onClick={handleLockToggle}
-            className={`font-mono text-sm font-bold px-4 py-2 border-4 border-black transition-all hover:translate-x-[2px] hover:translate-y-[2px] ${
+            className={`font-mono text-sm font-bold px-4 py-2 border-4 border-black transition-all hover:translate-x-0.5 hover:translate-y-0.5 ${
               isLocked 
                 ? "bg-red-500 text-white shadow-[4px_4px_0_#000] hover:shadow-none" 
                 : "bg-white text-black shadow-[4px_4px_0_#000] hover:shadow-none"
@@ -66,7 +66,7 @@ export default function Skills() {
           </button>
           <button
             onClick={handleReset}
-            className="bg-black text-white font-mono text-sm font-bold px-4 py-2 border-4 border-black transition-all shadow-[4px_4px_0_#FFF] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+            className="bg-black text-white font-mono text-sm font-bold px-4 py-2 border-4 border-black transition-all shadow-[4px_4px_0_#FFF] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none"
           >
             RESET
           </button>
@@ -75,7 +75,7 @@ export default function Skills() {
       
       <div 
         ref={containerRef} 
-        className="relative w-full h-75 border-4 border-black bg-zinc-200 overflow-hidden shadow-[8px_8px_0px_0px_#000]"
+        className="relative w-full h-150 sm:h-125 md:h-125 border-4 border-black bg-zinc-200 overflow-hidden shadow-neo"
         style={{ cursor: "grab", touchAction: "none" }}
         onMouseDown={(e) => {
           (e.currentTarget as HTMLElement).style.cursor = "grabbing";

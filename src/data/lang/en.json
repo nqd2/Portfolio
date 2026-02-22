@@ -36,9 +36,9 @@
     "whatIDoHighlight2": "Make in Vietnam",
     "skills": "Skills",
     "interactiveEngine": "(Try dragging them around)",
-    "aestheticMode": "AESTHETIC_MODE",
-    "aesthetic": "Minimalist",
-    "darkMode": "Dark Mode",
+    "operatingSystem": "OPERATING SYSTEM",
+    "osName": "Windows",
+    "osVer": "Win10 LTSC",
     "status": "Status",
     "statusText": "Looking for a job..."
   },

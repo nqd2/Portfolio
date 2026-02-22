@@ -50,7 +50,7 @@ export default function LoadingScreen() {
   return (
     <div 
       ref={containerRef}
-      className="fixed inset-0 z-[100] bg-black text-white flex items-center justify-center pointer-events-none"
+      className="fixed inset-0 z-100 bg-black text-white flex items-center justify-center pointer-events-none"
     >
       <div className="flex flex-col items-center gap-2 font-mono font-black text-4xl uppercase tracking-widest">
         <div className="overflow-hidden">

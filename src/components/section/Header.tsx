@@ -29,15 +29,15 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 bg-white border-b-4 border-black transition-[padding] ${
+        className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 sm:px-6 md:px-12 bg-white border-b-4 border-black transition-[padding] ${
           compact ? "py-2" : "py-4"
         }`}
       >
         <Link href="#hero" className="block focus:outline-none">
-          <div className="bg-black px-4 py-1 transform -rotate-2 border-2 border-black inline-block group cursor-pointer transition-transform hover:-rotate-1">
-            <span className="text-2xl font-black font-mono relative block text-white tracking-widest">
-              <span className="absolute -left-[3px] top-0 text-cyan-400 mix-blend-screen opacity-90 group-hover:-left-[1px] transition-all">NQD&gt;&gt;</span>
-              <span className="absolute left-[3px] top-0 text-orange-500 mix-blend-screen opacity-90 group-hover:left-[1px] transition-all">NQD&gt;&gt;</span>
+          <div className="bg-black px-2 sm:px-4 py-1 transform -rotate-2 border-2 border-black inline-block group cursor-pointer transition-transform hover:-rotate-1">
+            <span className="text-xl sm:text-2xl font-black font-mono relative block text-white tracking-widest">
+              <span className="absolute left-0.75 top-0 text-cyan-400 mix-blend-screen opacity-90 group-hover:-left-px transition-all">NQD&gt;&gt;</span>
+              <span className="absolute left-0.75 top-0 text-orange-500 mix-blend-screen opacity-90 group-hover:left-px transition-all">NQD&gt;&gt;</span>
               <span className="relative z-10">NQD&gt;&gt;</span>
             </span>
           </div>
@@ -71,16 +71,24 @@ export default function Header() {
           </Link>
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <div className="hidden md:block">
+            <LanguageSwitcher />
+          </div>
+
+          <div className="block">
+            <ThemeSwitcher />
+          </div>
+
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 border-2 border-black"
+            className="md:hidden w-8 h-8 sm:w-10 sm:h-10 flex flex-col items-center justify-center gap-1 sm:gap-1.5 border-2 border-black"
             aria-label="Menu"
             aria-expanded={mobileOpen}
           >
             <span
-              className="block w-6 h-0.5 bg-black transition-transform"
+              className="block w-5 h-0.5 sm:w-6 bg-black transition-transform"
               style={
                 mobileOpen
                   ? { transform: "translateY(4px) rotate(45deg)" }
@@ -88,11 +96,11 @@ export default function Header() {
               }
             />
             <span
-              className="block w-6 h-0.5 bg-black transition-opacity"
+              className="block w-5 h-0.5 sm:w-6 bg-black transition-opacity"
               style={{ opacity: mobileOpen ? 0 : 1 }}
             />
             <span
-              className="block w-6 h-0.5 bg-black transition-transform"
+              className="block w-5 h-0.5 sm:w-6 bg-black transition-transform"
               style={
                 mobileOpen
                   ? { transform: "translateY(-4px) rotate(-45deg)" }
@@ -100,22 +108,6 @@ export default function Header() {
               }
             />
           </button>
-
-          <div className="hidden md:block">
-            <LanguageSwitcher />
-          </div>
-
-          <div className="hidden md:block">
-            <ThemeSwitcher />
-          </div>
-
-          <Link
-            href="#contact"
-            onClick={closeMobile}
-            className="glare-auto bg-black text-white px-6 py-2 font-black border-2 border-black uppercase shadow-[4px_4px_0px_0px_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all hover:bg-white hover:text-black scroll-float"
-          >
-            {t("nav.contact")}
-          </Link>
         </div>
       </header>
 

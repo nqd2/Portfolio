@@ -13,7 +13,7 @@ export default function Works() {
     <section
       id="works"
       data-theme="dark"
-      className="relative w-full min-h-screen bg-black text-white py-24 border-t-4 border-white z-0"
+      className="relative w-screen max-w-full min-h-screen overflow-x-hidden bg-black text-white py-24 border-t-4 border-white z-0"
     >
       <div className="text-center mb-20 relative w-full overflow-hidden z-20 gsap-fade-up">
         <div
@@ -25,15 +25,15 @@ export default function Works() {
             backgroundPosition: "0 0, 10px 10px",
           }}
         />
-        <h2 className="text-[12rem] font-black text-white/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none whitespace-nowrap scroll-float">
+        <h2 className="text-[clamp(4rem,20vw,12rem)] font-black text-white/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none whitespace-nowrap scroll-float">
           {t("works.showcaseBg")}
         </h2>
-        <h2 className="text-7xl md:text-9xl font-black text-white relative z-10 uppercase italic scroll-float-text">
+        <h2 className="text-[clamp(3rem,10vw,7rem)] md:text-9xl font-black text-white relative z-10 uppercase italic scroll-float-text text-center px-4 word-break-words break-all sm:break-normal">
           {t("works.showcase")}
         </h2>
       </div>
 
-      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-[1440px] relative z-20 gsap-stagger-container">
+      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-360 relative z-20 gsap-stagger-container">
         {projects.map((project) => (
           <div
             key={project.id}

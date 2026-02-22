@@ -17,7 +17,7 @@ export default function Hero() {
     <section
       id="hero"
       data-theme="dark"
-      className="relative w-full min-h-screen flex flex-col justify-center items-center border-b-4 border-white bg-black overflow-x-hidden overflow-y-auto z-0 py-16 md:py-24"
+      className="relative w-screen max-w-full min-h-screen flex flex-col justify-center items-center border-b-4 border-white bg-black overflow-x-hidden overflow-y-auto z-0 py-16 md:py-24"
       style={{ backgroundSize: "20px 20px" }}
     >
       <div className="container mx-auto px-4 z-20 flex flex-col items-center justify-center text-center gap-4 relative w-full max-w-full pt-14 pb-8 md:pt-20 md:pb-12 gsap-stagger-container">
@@ -31,12 +31,12 @@ export default function Hero() {
           <h1 className="text-[clamp(1.5rem,5vw,4.5rem)] sm:text-[clamp(2rem,6vw,5.5rem)] lg:text-[clamp(3rem,7vw,7rem)] font-black tracking-tighter text-white hover:skew-x-3 transition-transform scroll-float-text whitespace-normal md:whitespace-nowrap gsap-stagger-item">
             {t("hero.role1")}
           </h1>
-          <div className="flex items-center gap-2 sm:gap-4 my-2 scroll-float flex-shrink-0 gsap-stagger-item">
-            <span className="h-1 w-6 sm:w-8 md:w-20 bg-white block flex-shrink-0" />
+          <div className="flex items-center gap-2 sm:gap-4 my-2 scroll-float shrink-0 gsap-stagger-item">
+            <span className="h-1 w-6 sm:w-8 md:w-20 bg-white block shrink-0" />
             <span className="text-[clamp(0.875rem,2.5vw,1.875rem)] font-mono text-white/50 italic whitespace-nowrap">
               {t("hero.and")}
             </span>
-            <span className="h-1 w-6 sm:w-8 md:w-20 bg-white block flex-shrink-0" />
+            <span className="h-1 w-6 sm:w-8 md:w-20 bg-white block shrink-0" />
           </div>
           <h1 className="text-[clamp(1.5rem,5vw,4.5rem)] sm:text-[clamp(2rem,6vw,5.5rem)] lg:text-[clamp(3rem,7vw,7rem)] font-black tracking-widest text-transparent text-stroke hover:text-white transition-colors duration-300 scroll-float-text whitespace-normal md:whitespace-nowrap gsap-stagger-item">
             {t("hero.role2")}
